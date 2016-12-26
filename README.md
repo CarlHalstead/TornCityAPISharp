@@ -4,6 +4,7 @@
 ### Can do:
 - Player Statistics
 - General Torn Statistics
+- Simple Faction Statistics (name, ID, leader, best chain, rank)
 - Check if internet is working
 - Check if API key is there
 
