@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -48,10 +48,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API.cs" />
-    <Compile Include="EventsStatistics.cs" />
+    <Compile Include="CustomJsonConverter\ArrayOrDictionaryConverter.cs" />
+    <Compile Include="EventsStats\Event.cs" />
     <Compile Include="EventsStats\EventsBase.cs" />
-    <Compile Include="GeneralStatistics.cs" />
-    <Compile Include="Miscellaneous.cs" />
+    <Compile Include="FactionStatistics.cs" />
+    <Compile Include="FactionStats\FactionBasic.cs" />
+    <Compile Include="FactionStats\FactionMember.cs" />
+    <Compile Include="TornApiWrapper.cs" />
+    <Compile Include="Utils\ApiCaller.cs" />
+    <Compile Include="Utils\GetObjectFromUrl.cs" />
+    <Compile Include="Utils\Miscellaneous.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TornCityAPISharp.Development
+namespace TornCityAPISharp
 {
 	/// <summary>
 	/// This class will retrieve information about the different properies within Torn.

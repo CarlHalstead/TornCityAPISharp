@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace TornCityAPISharp
+namespace TornCityAPISharp.Utils
 {
 	class Miscellaneous
 	{
