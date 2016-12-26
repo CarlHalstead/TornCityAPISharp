@@ -11,3 +11,7 @@
 
 ### Can't do
 - Much else (yet)
+
+## Dependencies
+### You Need:
+- JSON.Net installed in your project
