@@ -18,6 +18,6 @@
 - Import the TornCityAPISharp namespace
 
 ## Example Code
-'''
+```
 API.apiKey = "YourKeyHere";
-'''
+```
