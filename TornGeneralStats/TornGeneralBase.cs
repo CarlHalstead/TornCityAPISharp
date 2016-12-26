@@ -1,0 +1,101 @@
+﻿namespace TornCityAPISharp.TornGeneralStats
+{
+	/// <summary>
+	/// Torn general stats base class
+	/// </summary>
+	public class TornGeneralBase
+	{
+		public int timestamp { get; set; }
+		public int users_total { get; set; }
+		public int users_male { get; set; }
+		public int users_female { get; set; }
+		public int users_marriedcouples { get; set; }
+		public int users_daily { get; set; }
+		public int total_users_logins { get; set; }
+		public double total_users_playtime { get; set; }
+		public int job_army { get; set; }
+		public int job_grocer { get; set; }
+		public int job_medical { get; set; }
+		public int job_casino { get; set; }
+		public int job_education { get; set; }
+		public int job_law { get; set; }
+		public int job_company { get; set; }
+		public int job_none { get; set; }
+		public int crimes { get; set; }
+		public int jailed { get; set; }
+		public long money_onhand { get; set; }
+		public int money_average { get; set; }
+		public long money_citybank { get; set; }
+		public int items { get; set; }
+		public int events { get; set; }
+		public int points_total { get; set; }
+		public int points_market { get; set; }
+		public int points_averagecost { get; set; }
+		public int points_bought { get; set; }
+		public int total_points_boughttotal { get; set; }
+		public int total_attacks_won { get; set; }
+		public int total_attacks_lost { get; set; }
+		public int total_attacks_stalemated { get; set; }
+		public int total_attacks_runaway { get; set; }
+		public int total_attacks_hits { get; set; }
+		public int total_attacks_misses { get; set; }
+		public int total_attacks_criticalhits { get; set; }
+		public int total_attacks_roundsfired { get; set; }
+		public int total_attacks_stealthed { get; set; }
+		public long total_attacks_moneymugged { get; set; }
+		public int total_attacks_respectgained { get; set; }
+		public int total_items_marketbought { get; set; }
+		public int total_items_bazaarbought { get; set; }
+		public int total_items_auctionswon { get; set; }
+		public int total_items_sent { get; set; }
+		public int total_trades { get; set; }
+		public double total_items_bazaarincome { get; set; }
+		public int total_items_cityfinds { get; set; }
+		public int total_items_dumpfinds { get; set; }
+		public int total_items_dumped { get; set; }
+		public int total_jail_jailed { get; set; }
+		public int total_jail_busted { get; set; }
+		public int total_jail_busts { get; set; }
+		public int total_jail_bailed { get; set; }
+		public long total_jail_bailcosts { get; set; }
+		public int total_hospital_trips { get; set; }
+		public int total_hospital_medicalitemsused { get; set; }
+		public int total_hospital_revived { get; set; }
+		public int total_mails_sent { get; set; }
+		public int total_mails_sent_friends { get; set; }
+		public int total_mails_sent_faction { get; set; }
+		public int total_mails_sent_company { get; set; }
+		public int total_mails_sent_spouse { get; set; }
+		public int total_classifiedads_placed { get; set; }
+		public int total_bounty_placed { get; set; }
+		public long total_bounty_rewards { get; set; }
+		public int total_travel_all { get; set; }
+		public int total_travel_argentina { get; set; }
+		public int total_travel_mexico { get; set; }
+		public int total_travel_dubai { get; set; }
+		public int total_travel_hawaii { get; set; }
+		public int total_travel_japan { get; set; }
+		public int total_travel_unitedkingdom { get; set; }
+		public int total_travel_southafrica { get; set; }
+		public int total_travel_switzerland { get; set; }
+		public int total_travel_china { get; set; }
+		public int total_travel_canada { get; set; }
+		public int total_travel_caymanislands { get; set; }
+		public int total_drugs_used { get; set; }
+		public int total_drugs_overdosed { get; set; }
+		public int total_drugs_cannabis { get; set; }
+		public int total_drugs_ecstacy { get; set; }
+		public int total_drugs_ketamine { get; set; }
+		public int total_drugs_lsd { get; set; }
+		public int total_drugs_opium { get; set; }
+		public int total_drugs_shrooms { get; set; }
+		public int total_drugs_speed { get; set; }
+		public int total_drugs_pcp { get; set; }
+		public int total_drugs_xanax { get; set; }
+		public int total_drugs_vicodin { get; set; }
+		public int total_merits_bought { get; set; }
+		public int total_refills_bought { get; set; }
+		public int total_company_trains { get; set; }
+		public int total_statenhancers_used { get; set; }
+	}
+}
