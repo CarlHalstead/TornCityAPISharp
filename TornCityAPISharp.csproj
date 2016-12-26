@@ -82,7 +82,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="FactionStats\" />
     <Folder Include="GymStats\" />
     <Folder Include="PropertyStats\" />
   </ItemGroup>
