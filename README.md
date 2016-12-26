@@ -38,7 +38,7 @@ private async void GetGeneralStatisticsAsync()
 // An Async method to avoid application freezing
 private async void GetFactionStats()
 {
-	// Retrieve simple specific info about your faction.
+	// Retrieve simple specific info about your faction, uses an Enum.
 	// These may include:
 	// - Faction Name/ ID
 	// - Leader ID
