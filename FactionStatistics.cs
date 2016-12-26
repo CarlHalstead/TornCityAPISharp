@@ -1,60 +1,39 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Net;
+
 using System.Threading.Tasks;
+using TornCityAPISharp.FactionStats;
+using TornCityAPISharp.Utils;
 
 namespace TornCityAPISharp
 {
-	public class FactionStatistics
-	{
-		public enum FactionData
-		{
-			ID,
-			name,
-			leader,
-			best_chain,
-			respect,
-			rank
-		}
+    /// <summary>
+    /// Class That Will get the Faction statistics
+    /// </summary>
+    public class FactionStatistics
+    {
+        private API api;
+        private GetObjectFromUrl apiCaller = new GetObjectFromUrl();
+        private static string urlBase = @"https://api.torn.com/faction/";
 
-		private static string generalStatsUrl = "https://api.torn.com/faction/?selections=&key=";
+        public FactionStatistics(ref API api)
+        {
+            this.api = api;
+        }
 
-		/// <summary>
-		/// The URL for the general stats
-		/// </summary>
-		public static string URL
-		{
-			get { return (generalStatsUrl + API.apiKey); }
-		}
+        /// <summary>
+        /// Perform Faction Basic Method
+        /// </summary>
+        /// <param name="apiKey">Api Key To Use</param>
+        /// <param name="factionID"></param>
+        /// <returns></returns>
+        public async Task<FactionBasic> GetFactionBasic(string factionID = "")
+        {
+            string url = urlBase + factionID + "?selections=basic&key=" + api.ApiKey;
+            var response = await apiCaller.GetObject<FactionBasic>(url);
+            api.ApiCallCount++;
 
-		/// <summary>
-		/// This retrieves inforamtion about ALL available statistics for the WHOLE of Torn, asynchronously
-		/// </summary>
-		/// <returns></returns>
-		public static async Task<string> GetSimpleFactionStatisticsAsync(FactionData fd)
-		{
-			var t = await Task<string>.Factory.StartNew(() => GetSimpleFactionStatistics(fd));
-			return t;
-		}
-
-		/// <summary>
-		/// This retrieves inforamtion about ALL available statistics for the WHOLE of Torn
-		/// </summary>
-		/// <returns></returns>
-		[Obsolete("Consider using the Async version within an Async method using await when calling the function")]
-		public static string GetSimpleFactionStatistics(FactionData fd)
-		{
-			if (API.DoesAPIKeyExist() == false) {
-				return null;
-			}
-
-			using (WebClient wc = new WebClient())
-			{
-				var json = wc.DownloadString(URL);
-				var data = JsonConvert.DeserializeObject<Dictionary<object, object>>(json);
-				return data[fd.ToString()].ToString();
-			}
-		}
-	}
+            return response;
+        }
+    }
 }
