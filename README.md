@@ -15,3 +15,9 @@
 ## Dependencies
 ### You Need:
 - JSON.Net installed in your project
+- Import the TornCityAPISharp namespace
+
+## Example Code
+'''
+API.apiKey = "YourKeyHere";
+'''
