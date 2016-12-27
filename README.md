@@ -17,6 +17,12 @@
 - JSON.Net installed in your project
 - Import the TornCityAPISharp namespace
 
+## VS Install:
+
+- Right-click on your project on the right hand side
+- Go to Add -> Reference -> Browse -> Find the TornCityAPISharp.dll -> OK
+- Add the TornCityAPISharp namespace to the top of your project ('using TornCityAPISharp')
+
 ## Example Code
 ```
 // Immediately set the API key within the wrapper
