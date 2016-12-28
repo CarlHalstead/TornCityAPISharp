@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 using TornCityAPISharp.CustomJsonConverter;
 
 namespace TornCityAPISharp.FactionStats
 {
-    public class FactionBasic
+    public class FactionBasic : IFactionStatistics
     {
         /// <summary>
         /// Faction Id
@@ -47,7 +48,7 @@ namespace TornCityAPISharp.FactionStats
         /// </summary>
         [JsonProperty("members")]
         [JsonConverter(typeof(ArrayOrDictionaryConverter))]
-        public Dictionary<long, FactionMember> Members { get; set; }
+        public Dictionary<long, Member> Members { get; set; }
 
         /// <summary>
         /// Faction specials (Name of special/Level)
@@ -76,5 +77,10 @@ namespace TornCityAPISharp.FactionStats
         [JsonProperty("peace")]
         [JsonConverter(typeof(ArrayOrDictionaryConverter))]
         public Dictionary<string, long> Peace { get; set; }
+
+        public string GetMethodName()
+        {
+            return FactionMethods.basic.ToString();
+        }
     }
 }
