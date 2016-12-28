@@ -11,8 +11,8 @@
 
 ## Dependencies
 ### You Need:
-- JSON.Net installed in your project
-- Import the TornCityAPISharp namespace
+- JSON.Net installed in your project (Latest Version)
+- Import the TornCityAPISharp namespace (After referencing the DLL, See Below)
 
 ## VS Install:
 
