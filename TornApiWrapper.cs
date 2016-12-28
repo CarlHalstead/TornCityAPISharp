@@ -1,8 +1,7 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using TornCityAPISharp.Utils;
+using TornCityAPISharp.Enums;
 using TornCityAPISharp.FactionStats;
-
 
 namespace TornCityAPISharp
 {
@@ -24,8 +23,6 @@ namespace TornCityAPISharp
             }
         }
 
-        public FactionStatistics FactionStatistics { get; private set; }
-
         public PlayerStatistics PlayerStatistics { get; private set; }
 
         public PropertyStatistics PropertyStatistics { get; private set; }
@@ -33,15 +30,16 @@ namespace TornCityAPISharp
 
         #region Mutators
         private API _apiKey;
+        private GetObjectFromUrl apiCaller = new GetObjectFromUrl();
+        private string urlBase = @"https://api.torn.com/";
         #endregion
 
         #region Constructors
         public TornApiWrapper(string apiKey, int maxNumberOfCalls)
         {
             ApiKey = new API(apiKey);
+           
             MaxNumberOfCalls = maxNumberOfCalls;
-            FactionStatistics = new FactionStatistics(ref _apiKey);
-
         }
 
         #endregion
@@ -51,9 +49,17 @@ namespace TornCityAPISharp
         {
             this.ApiKey.ApiKey = apiKey;
         }
+
+        public async Task<T> GetFromFactionApi<T>(string factionID) where T:IFactionStatistics,new()
+        {
+            var method = new T();
+            string url = urlBase + Fields.faction.ToString() + "/"   + factionID + "?selections="+ method.GetMethodName() +"&key=" + _apiKey.ApiKey;
+            
+            var response = await apiCaller.GetObject<T>(url);
+            _apiKey.ApiCallCount++;
+
+            return response;
+        }
         #endregion
-
-
-       
     }
 }

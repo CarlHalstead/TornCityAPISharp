@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using TornCityAPISharp.CustomJsonConverter;
 
 namespace TornCityAPISharp.EventsStats
 {
@@ -12,6 +13,7 @@ namespace TornCityAPISharp.EventsStats
         /// This is the list of events
         /// </summary>
         [JsonProperty("events")]
+        [JsonConverter(typeof(ArrayOrDictionaryConverter))]
         public Dictionary<long, Event> events { get; set; }
 	}
 }
