@@ -48,6 +48,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API.cs" />
+    <Compile Include="CompanyStats\Company.cs" />
+    <Compile Include="CompanyStats\CompanyDetailed.cs" />
+    <Compile Include="CompanyStats\CompanyEmpoleeys.cs" />
+    <Compile Include="CompanyStats\CompanyMethods.cs" />
+    <Compile Include="CompanyStats\CompanyNewsFull.cs" />
+    <Compile Include="CompanyStats\CompanyNews.cs" />
+    <Compile Include="CompanyStats\CompanyProfile.cs" />
+    <Compile Include="CompanyStats\CompanyStock.cs" />
+    <Compile Include="CompanyStats\CustomDetailed.cs" />
+    <Compile Include="CompanyStats\Employee.cs" />
+    <Compile Include="CompanyStats\EmployeeDetails.cs" />
+    <Compile Include="CompanyStats\ICompanyStatistics.cs" />
+    <Compile Include="CompanyStats\News.cs" />
+    <Compile Include="CompanyStats\StockItem.cs" />
+    <Compile Include="CompanyStats\Upgrades.cs" />
     <Compile Include="CustomJsonConverter\ArrayOrDictionaryConverter.cs" />
     <Compile Include="FactionStats\FactionMethods.cs" />
     <Compile Include="Enums\Fields.cs" />
@@ -94,9 +109,7 @@
     <Compile Include="PlayerStats\Job.cs" />
     <Compile Include="PlayerStats\Life.cs" />
     <Compile Include="PlayerStats\Married.cs" />
-    <Compile Include="PlayerStatistics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropertyStatistics.cs" />
     <Compile Include="PlayerStats\PlayerBase.cs" />
   </ItemGroup>
   <ItemGroup>

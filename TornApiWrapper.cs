@@ -4,6 +4,7 @@ using TornCityAPISharp.Utils;
 using TornCityAPISharp.Enums;
 using TornCityAPISharp.FactionStats;
 using TornCityAPISharp.PropertyStats;
+using TornCityAPISharp.CompanyStats;
 
 namespace TornCityAPISharp
 {
@@ -24,10 +25,6 @@ namespace TornCityAPISharp
                 this._apiKey = value;
             }
         }
-
-        public PlayerStatistics PlayerStatistics { get; private set; }
-
-        public PropertyStatistics PropertyStatistics { get; private set; }
         #endregion
 
         #region Mutators
@@ -72,6 +69,18 @@ namespace TornCityAPISharp
             }
 
             string url = urlBase + Fields.property.ToString() + "/" + propertyId + "?selections=" + method.GetMethodName() + "&key=" + _apiKey.ApiKey;
+
+            var response = await apiCaller.GetObject<T>(url);
+            _apiKey.ApiCallCount++;
+
+            return response;
+        }
+
+        public async Task<T> GetFromCompanyApi<T>(string propertyId) where T : ICompanyStatistics, new()
+        {
+            var method = new T();
+
+            string url = urlBase + Fields.company.ToString() + "/" + propertyId + "?selections=" + method.GetMethodName() + "&key=" + _apiKey.ApiKey;
 
             var response = await apiCaller.GetObject<T>(url);
             _apiKey.ApiCallCount++;
