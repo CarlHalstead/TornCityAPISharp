@@ -1,7 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using TornCityAPISharp.Utils;
 using TornCityAPISharp.Enums;
 using TornCityAPISharp.FactionStats;
+using TornCityAPISharp.PropertyStats;
 
 namespace TornCityAPISharp
 {
@@ -41,7 +43,7 @@ namespace TornCityAPISharp
            
             MaxNumberOfCalls = maxNumberOfCalls;
         }
-
+        
         #endregion
 
         #region Methods
@@ -55,6 +57,22 @@ namespace TornCityAPISharp
             var method = new T();
             string url = urlBase + Fields.faction.ToString() + "/"   + factionID + "?selections="+ method.GetMethodName() +"&key=" + _apiKey.ApiKey;
             
+            var response = await apiCaller.GetObject<T>(url);
+            _apiKey.ApiCallCount++;
+
+            return response;
+        }
+
+        public async Task<T> GetFromPropertyApi<T>(string propertyId) where T : IPropertyStatistics, new()
+        {
+            var method = new T();
+            if(string.IsNullOrWhiteSpace(propertyId) == true)
+            {
+                throw new ArgumentException("Property id cannot be null of whitespace");
+            }
+
+            string url = urlBase + Fields.property.ToString() + "/" + propertyId + "?selections=" + method.GetMethodName() + "&key=" + _apiKey.ApiKey;
+
             var response = await apiCaller.GetObject<T>(url);
             _apiKey.ApiCallCount++;
 

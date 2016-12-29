@@ -72,8 +72,13 @@
     <Compile Include="FactionStats\Member.cs" />
     <Compile Include="FactionStats\FactionTemporary.cs" />
     <Compile Include="FactionStats\FactionWeapon.cs" />
-    <Compile Include="FactionStats\FactionStatistics.cs" />
+    <Compile Include="FactionStats\IFactionStatistics.cs" />
     <Compile Include="FactionStats\Item.cs" />
+    <Compile Include="PropertyStats\IPropertyStatistics.cs" />
+    <Compile Include="PropertyStats\Property.cs" />
+    <Compile Include="PropertyStats\PropertyMethods.cs" />
+    <Compile Include="PropertyStats\PropertyProperty.cs" />
+    <Compile Include="PropertyStats\Rented.cs" />
     <Compile Include="TornApiWrapper.cs" />
     <Compile Include="Utils\ApiCaller.cs" />
     <Compile Include="Utils\GetObjectFromUrl.cs" />
@@ -103,7 +108,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GymStats\" />
-    <Folder Include="PropertyStats\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
