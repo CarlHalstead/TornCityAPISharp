@@ -6,6 +6,7 @@
 - Player Statistics
 - General Torn Statistics (Needs updating)
 - Faction Statistics
+- Company Statistics
 - Check if internet is working
 - Check if API key is there
 
@@ -15,7 +16,6 @@
 - Import the TornCityAPISharp namespace (After referencing the DLL, See Below)
 
 ## VS Install:
-
 - Right-click on your project on the right hand side
 - Go to Add -> Reference -> Browse -> Find the TornCityAPISharp.dll -> OK
 - Add the TornCityAPISharp namespace to the top of your project ('using TornCityAPISharp')
