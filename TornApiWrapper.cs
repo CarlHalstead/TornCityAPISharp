@@ -5,6 +5,8 @@ using TornCityAPISharp.Enums;
 using TornCityAPISharp.FactionStats;
 using TornCityAPISharp.PropertyStats;
 using TornCityAPISharp.CompanyStats;
+using TornCityAPISharp.MarketStats;
+using TornCityAPISharp.UserStats;
 
 namespace TornCityAPISharp
 {
@@ -81,6 +83,30 @@ namespace TornCityAPISharp
             var method = new T();
 
             string url = urlBase + Fields.company.ToString() + "/" + propertyId + "?selections=" + method.GetMethodName() + "&key=" + _apiKey.ApiKey;
+
+            var response = await apiCaller.GetObject<T>(url);
+            _apiKey.ApiCallCount++;
+
+            return response;
+        }
+
+        public async Task<T> GetFromMarketApi<T>(string itemId) where T : IMarketStatistics, new()
+        {
+            var method = new T();
+
+            string url = urlBase + Fields.market.ToString() + "/" + itemId + "?selections=" + method.GetMethodName() + "&key=" + _apiKey.ApiKey;
+
+            var response = await apiCaller.GetObject<T>(url);
+            _apiKey.ApiCallCount++;
+
+            return response;
+        }
+
+        public async Task<T> GetFromUserApi<T>(string itemId) where T : IUserStatistics, new()
+        {
+            var method = new T();
+
+            string url = urlBase + Fields.user.ToString() + "/" + itemId + "?selections=" + method.GetMethodName() + "&key=" + _apiKey.ApiKey;
 
             var response = await apiCaller.GetObject<T>(url);
             _apiKey.ApiCallCount++;
