@@ -27,9 +27,9 @@ namespace TornCityAPISharp.Utils
             {
                 return JsonConvert.DeserializeObject<T>(response);
             }
-            catch
+            catch(Exception ex)
             {
-                throw new Exception("Error converting Response");
+                throw new Exception("Error converting Response " + ex.Message);
             }
         }
     }
