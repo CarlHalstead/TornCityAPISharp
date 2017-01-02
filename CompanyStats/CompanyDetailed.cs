@@ -6,7 +6,7 @@ namespace TornCityAPISharp.CompanyStats
     public class CompanyDetails
     {
         [JsonProperty("company_bank")]
-        public int CompanyBank { get; set; }
+        public long CompanyBank { get; set; }
 
         [JsonProperty("popularity")]
         public int Popularity { get; set; }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TornCityAPISharp
+namespace TornCityAPISharp.Utils
 {
 	/// <summary>
 	/// This class holds some very simple information for the working of the API
