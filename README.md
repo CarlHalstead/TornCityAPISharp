@@ -4,7 +4,7 @@
 ### Can do: (As of latest version)
 - Asynchronous Gathering of Statistics
 - Player Statistics
-- General Torn Statistics (Needs updating)
+- General Torn Statistics
 - Faction Statistics
 - Company Statistics
 - Check if internet is working
