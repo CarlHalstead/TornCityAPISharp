@@ -7,6 +7,7 @@ using TornCityAPISharp.PropertyStats;
 using TornCityAPISharp.CompanyStats;
 using TornCityAPISharp.MarketStats;
 using TornCityAPISharp.UserStats;
+using TornCityAPISharp.TornStats;
 
 namespace TornCityAPISharp
 {
@@ -107,6 +108,18 @@ namespace TornCityAPISharp
             var method = new T();
 
             string url = urlBase + Fields.user.ToString() + "/" + itemId + "?selections=" + method.GetMethodName() + "&key=" + _apiKey.ApiKey;
+
+            var response = await apiCaller.GetObject<T>(url);
+            _apiKey.ApiCallCount++;
+
+            return response;
+        }
+
+        public async Task<T> GetFromTornApi<T>(string parameter) where T : ITornStats, new()
+        {
+            var method = new T();
+
+            string url = urlBase + Fields.torn.ToString() + "/" + parameter + "?selections=" + method.GetMethodName() + "&key=" + _apiKey.ApiKey;
 
             var response = await apiCaller.GetObject<T>(url);
             _apiKey.ApiCallCount++;

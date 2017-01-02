@@ -47,7 +47,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API.cs" />
+    <Compile Include="TornStats\Companies.cs" />
+    <Compile Include="TornStats\Gyms.cs" />
+    <Compile Include="TornStats\Honor.cs" />
+    <Compile Include="TornStats\ITornStats.cs" />
+    <Compile Include="TornStats\Items.cs" />
+    <Compile Include="TornStats\Medal.cs" />
+    <Compile Include="TornStats\OrganizedCrimes.cs" />
+    <Compile Include="TornStats\Position.cs" />
+    <Compile Include="TornStats\Specials.cs" />
+    <Compile Include="TornStats\Stock.cs" />
+    <Compile Include="TornStats\TornCompanies.cs" />
+    <Compile Include="TornStats\TornGyms.cs" />
+    <Compile Include="TornStats\TornHonors.cs" />
+    <Compile Include="TornStats\TornItems.cs" />
+    <Compile Include="TornStats\TornMedals.cs" />
+    <Compile Include="TornStats\TornMethods.cs" />
+    <Compile Include="TornStats\TornOrganizedCrimes.cs" />
+    <Compile Include="Utils\API.cs" />
     <Compile Include="CompanyStats\Company.cs" />
     <Compile Include="CompanyStats\CompanyDetailed.cs" />
     <Compile Include="CompanyStats\CompanyEmpoleeys.cs" />
