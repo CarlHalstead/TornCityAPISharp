@@ -172,8 +172,8 @@
     <Compile Include="UserStats\UserTravel.cs" />
     <Compile Include="UserStats\UserWorkStats.cs" />
     <Compile Include="Utils\ApiCaller.cs" />
+    <Compile Include="Utils\Error.cs" />
     <Compile Include="Utils\GetObjectFromUrl.cs" />
-    <Compile Include="Utils\Miscellaneous.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
