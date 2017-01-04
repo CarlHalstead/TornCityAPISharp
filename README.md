@@ -10,10 +10,7 @@
 - Check if internet is working
 - Check if API key is there
 
-## Dependencies
-### You Need:
-- JSON.Net installed in your project (Latest Version)
-- Import the TornCityAPISharp namespace (After referencing the DLL, See Below)
+
 
 # Installing
 ## VS Install:
@@ -24,6 +21,11 @@
 
 ## Installing with Nuget
 - Run PM> Install-Package TornCityAPISharp
+
+## Dependencies
+### You Need:
+- JSON.Net installed in your project (Latest Version)
+- Import the TornCityAPISharp namespace (After referencing the DLL, See Below)
 
 ## Example Code
 See the (also incomplete) wiki!
