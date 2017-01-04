@@ -15,6 +15,7 @@
 - JSON.Net installed in your project (Latest Version)
 - Import the TornCityAPISharp namespace (After referencing the DLL, See Below)
 
+# Installing
 ## VS Install:
 - Download the DLL from the releases page
 - Within VS, Right-click on your project on the right hand side
