@@ -1,5 +1,5 @@
 # TornCityAPISharp
-## A (incomplete) C# Wrapper for Torn City API
+## A C# Wrapper for Torn City API
 
 ### Can do: (As of latest version)
 - Asynchronous Gathering of Statistics
