@@ -24,7 +24,7 @@
 
 ## Dependencies
 ### You Need:
-- JSON.Net installed in your project (Latest Version)
+- JSON.Net (Latest Version)
 
 ## Example Code
 See the (also incomplete) wiki!
