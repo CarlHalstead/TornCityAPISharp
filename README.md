@@ -27,4 +27,4 @@
 - JSON.Net (Latest Version)
 
 ## Example Code
-See the (also incomplete) wiki!
+See the wiki!
