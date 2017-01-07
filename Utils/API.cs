@@ -11,10 +11,8 @@ namespace TornCityAPISharp.Utils
 		/// This holds a reference to the apiKey that you must provide
 		/// </summary>
 		public string ApiKey { get; private set; }
-        /// <summary>
-        /// number of calls with this api key
-        /// </summary>
-        public int ApiCallCount { get; private set; }
+
+        private int ApiCallCount;
 
         /// <summary>
         /// Last the the api key was reset to zero
@@ -52,6 +50,7 @@ namespace TornCityAPISharp.Utils
             var time = DateTime.Now - _lastReset;
             if(time.Minutes >=1)
             {
+                _lastReset = DateTime.Now;
                 ApiCallCount = 1;
                 return ApiCallCount;
             }
@@ -71,6 +70,7 @@ namespace TornCityAPISharp.Utils
             var time = DateTime.Now - _lastReset;
             if (time.Minutes >= 1)
             {
+                _lastReset = DateTime.Now;
                 ApiCallCount = 0;
                 return ApiCallCount;
             }
