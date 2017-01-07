@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace TornCityAPISharp.Utils
@@ -21,7 +18,7 @@ namespace TornCityAPISharp.Utils
             }
             catch (Exception ex)
             {
-                throw new Exception("Error Getting Response", ex);
+                throw new Exception("Error Getting Response - " + ex.Message, ex);
             }
 
             try
@@ -52,7 +49,7 @@ namespace TornCityAPISharp.Utils
             }
             catch(Exception ex)
             {
-                throw new Exception("Error converting Response " + ex.Message);
+                throw new Exception("Error converting Response " + ex.Message,ex);
             }
         }
     }
