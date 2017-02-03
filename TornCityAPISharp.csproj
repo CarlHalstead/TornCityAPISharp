@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FactionStats\FactionsStats.cs" />
+    <Compile Include="FactionStats\FactionUpgrades.cs" />
     <Compile Include="TornStats\Companies.cs" />
     <Compile Include="TornStats\Gyms.cs" />
     <Compile Include="TornStats\Honor.cs" />
@@ -57,6 +59,7 @@
     <Compile Include="TornStats\Specials.cs" />
     <Compile Include="TornStats\Stock.cs" />
     <Compile Include="TornStats\TornCompanies.cs" />
+    <Compile Include="TornStats\TornFactonTree.cs" />
     <Compile Include="TornStats\TornGyms.cs" />
     <Compile Include="TornStats\TornHonors.cs" />
     <Compile Include="TornStats\TornItems.cs" />
@@ -82,8 +85,6 @@
     <Compile Include="CustomJsonConverter\ArrayOrDictionaryConverter.cs" />
     <Compile Include="FactionStats\FactionMethods.cs" />
     <Compile Include="Enums\Fields.cs" />
-    <Compile Include="EventsStats\Event.cs" />
-    <Compile Include="EventsStats\EventsBase.cs" />
     <Compile Include="FactionStats\Event.cs" />
     <Compile Include="FactionStats\FactionArmor.cs" />
     <Compile Include="FactionStats\FactionBasic.cs" />

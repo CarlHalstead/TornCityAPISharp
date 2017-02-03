@@ -17,6 +17,7 @@ namespace TornCityAPISharp.TornStats
         properties,
         education,
         stats,
-        stocks
+        stocks,
+        factiontree
     }
 }

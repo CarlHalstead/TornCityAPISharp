@@ -27,6 +27,8 @@ namespace TornCityAPISharp.FactionStats
         donationnewsfull,
         crimes,
         attacks,
-        attacksfull
+        attacksfull,
+        stats,
+        upgrades
     }
 }
