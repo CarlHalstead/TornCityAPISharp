@@ -82,10 +82,16 @@ namespace TornCityAPISharp
         {
             var method = new T();
             string url = urlBase + Fields.faction.ToString() + "/"   + factionID + "?selections="+ method.GetMethodName() +"&key=" + _apiKey.ApiKey;
+            try
+            {
+                var response = await DoCall<T>(url);
 
-            var response = await DoCall<T>(url);
-
-            return response;
+                return response;
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
         }
 
         /// <summary>
@@ -104,9 +110,16 @@ namespace TornCityAPISharp
 
             string url = urlBase + Fields.property.ToString() + "/" + propertyId + "?selections=" + method.GetMethodName() + "&key=" + _apiKey.ApiKey;
 
-            var response = await DoCall<T>(url);
+            try
+            {
+                var response = await DoCall<T>(url);
 
-            return response;
+                return response;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         /// <summary>
@@ -121,9 +134,16 @@ namespace TornCityAPISharp
 
             string url = urlBase + Fields.company.ToString() + "/" + companyId + "?selections=" + method.GetMethodName() + "&key=" + _apiKey.ApiKey;
 
-            var response = await DoCall<T>(url);
+            try
+            {
+                var response = await DoCall<T>(url);
 
-            return response;
+                return response;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         /// <summary>
@@ -138,9 +158,16 @@ namespace TornCityAPISharp
 
             string url = urlBase + Fields.market.ToString() + "/" + itemId + "?selections=" + method.GetMethodName() + "&key=" + _apiKey.ApiKey;
 
-            var response = await DoCall<T>(url);
+            try
+            {
+                var response = await DoCall<T>(url);
 
-            return response;
+                return response;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         /// <summary>
@@ -155,9 +182,16 @@ namespace TornCityAPISharp
 
             string url = urlBase + Fields.user.ToString() + "/" + userId + "?selections=" + method.GetMethodName() + "&key=" + _apiKey.ApiKey;
 
-            var response = await DoCall<T>(url);
+            try
+            {
+                var response = await DoCall<T>(url);
 
-            return response;
+                return response;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         /// <summary>
@@ -172,9 +206,16 @@ namespace TornCityAPISharp
 
             string url = urlBase + Fields.torn.ToString() + "/" + parameter + "?selections=" + method.GetMethodName() + "&key=" + _apiKey.ApiKey;
 
-            var response = await DoCall<T>(url);
+            try
+            {
+                var response = await DoCall<T>(url);
 
-            return response;
+                return response;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         private async Task<T> DoCall<T>(string url)
@@ -183,11 +224,19 @@ namespace TornCityAPISharp
             {
                 throw new TornApiToManyRequestException("To many calls have been made with this api key maximum amount: " + this.MaxNumberOfCalls.ToString());
             }
-            var response = await apiCaller.GetObject<T>(url);
+            try
+            {
+                var response = await apiCaller.GetObject<T>(url);
 
-            _apiKey.AddApiCount();
+                _apiKey.AddApiCount();
 
-            return response;
+                return response;
+            }
+            catch(Exception e)
+            {
+                throw  e;
+            }
+            
         }
         #endregion
     }
