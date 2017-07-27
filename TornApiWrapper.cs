@@ -176,7 +176,7 @@ namespace TornCityAPISharp
         /// <typeparam name="T">object implementing IUserStatistics interface from the TornCityAPISharp.UserStats namespace</typeparam>
         /// <param name="userId">A porperty Id</param>
         /// <returns>Object of type T</returns>
-        public async Task<T> GetFromUserApi<T>(string userId) where T : IUserStatistics, new()
+        public async Task<T> GetFromUserApi<T>(string userId = null) where T : IUserStatistics, new()
         {
             var method = new T();
 
